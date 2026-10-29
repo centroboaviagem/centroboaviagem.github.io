@@ -27,6 +27,11 @@ SRC = RAIZ / "src"
 SAIDA = RAIZ / "docs"
 
 
+def gravar(caminho, texto):
+    # sempre LF, para o git não acusar mudança de fim de linha no Windows
+    caminho.write_text(texto, encoding="utf-8", newline="\n")
+
+
 def carregar_config():
     return json.loads((SRC / "config.json").read_text(encoding="utf-8"))
 
@@ -201,7 +206,7 @@ def gerar():
         )
         destino = SAIDA / (caminho + "index.html" if caminho == "" or caminho.endswith("/") else caminho)
         destino.parent.mkdir(parents=True, exist_ok=True)
-        destino.write_text(substituir(layout, valores), encoding="utf-8")
+        gravar(destino, substituir(layout, valores))
         if not caminho.endswith(".html"):
             urls_sitemap.append(f"{cfg['url']}/{caminho}")
 
@@ -210,19 +215,19 @@ def gerar():
         if destino.exists():
             sys.exit(f"redirecionamento {antigo} colide com uma página real")
         destino.parent.mkdir(parents=True, exist_ok=True)
-        destino.write_text(pagina_redirecionamento(cfg, novo, prefixo_raiz(antigo)), encoding="utf-8")
+        gravar(destino, pagina_redirecionamento(cfg, novo, prefixo_raiz(antigo)))
 
     hoje = datetime.date.today().isoformat()
-    (SAIDA / "sitemap.xml").write_text(
+    gravar(
+        SAIDA / "sitemap.xml",
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"  <url><loc>{u}</loc><lastmod>{hoje}</lastmod></url>\n" for u in urls_sitemap)
         + "</urlset>\n",
-        encoding="utf-8",
     )
-    (SAIDA / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {cfg['url']}/sitemap.xml\n", encoding="utf-8")
-    (SAIDA / ".nojekyll").write_text("", encoding="utf-8")
+    gravar(SAIDA / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {cfg['url']}/sitemap.xml\n")
+    gravar(SAIDA / ".nojekyll", "")
     # domínio próprio do GitHub Pages
-    (SAIDA / "CNAME").write_text(urllib.parse.urlparse(cfg["url"]).hostname + "\n", encoding="utf-8")
+    gravar(SAIDA / "CNAME", urllib.parse.urlparse(cfg["url"]).hostname + "\n")
     print(f"ok: {len(urls_sitemap)} páginas, {len(cfg['redirecionamentos'])} redirecionamentos em {SAIDA}")
 
 
