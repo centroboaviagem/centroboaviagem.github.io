@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{titulo_completo}}</title>
+<meta name="description" content="{{descricao}}">
+<link rel="canonical" href="{{url_pagina}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{nome}}">
+<meta property="og:title" content="{{titulo_completo}}">
+<meta property="og:description" content="{{descricao}}">
+<meta property="og:url" content="{{url_pagina}}">
+<meta property="og:image" content="{{url}}/img/capa.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="{{raiz}}img/icone.png">
+<link rel="stylesheet" href="{{raiz}}css/estilo.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="topo__barra container">
+    <a class="topo__logo" href="{{raiz}}"><img src="{{raiz}}img/logo.png" width="171" height="53" alt="{{nome}}"></a>
+    <input type="checkbox" id="menu-abrir" class="menu-abrir" aria-label="Abrir menu">
+    <label for="menu-abrir" class="menu-botao" aria-hidden="true"><span></span><span></span><span></span></label>
+    <nav class="menu" aria-label="Menu principal">
+      <ul>
+{{menu}}
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="conteudo">
+{{conteudo}}
+</main>
+<footer class="rodape">
+  <div class="container rodape__grade">
+    <div>
+      <img src="{{raiz}}img/logo.png" width="171" height="53" alt="{{nome}}">
+      <p>Formação humana, cultural, profissional e espiritual para jovens em Niterói.</p>
+    </div>
+    <div>
+      <h2>Contato</h2>
+      <p><a href="tel:{{telefone_link}}">{{telefone}}</a><br>
+      <a href="mailto:{{email}}">{{email}}</a><br>
+      {{endereco}}</p>
+    </div>
+    <div>
+      <h2>Redes</h2>
+      <p><a href="https://www.instagram.com/{{instagram_usuario}}/" rel="noopener">Instagram</a><br>
+      <a href="{{facebook}}" rel="noopener">Facebook</a><br>
+      <a href="{{youtube_canal}}" rel="noopener">YouTube</a></p>
+    </div>
+  </div>
+  <p class="container rodape__nota">© {{ano}} {{nome}} · Mantido pela <a href="https://www.aces-rio.org.br" rel="noopener">ACES</a></p>
+</footer>
+</body>
+</html>

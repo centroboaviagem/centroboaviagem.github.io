@@ -1,0 +1,58 @@
+{
+  "nome": "Centro Cultural Boa Viagem",
+  "url": "https://ccbv.org.br",
+  "descricao_padrao": "O Centro Cultural Boa Viagem, em Niterói, promove a formação de jovens com atividades culturais, sociais, profissionais e espirituais num ambiente de amizade e valores.",
+  "telefone": "+55 (21) 2710-0550",
+  "telefone_link": "+552127100550",
+  "email": "info@ccbv.org.br",
+  "endereco": "Rua Domingos Sávio Nogueira Saad, 3 – Boa Viagem, Niterói/RJ – CEP 24210-325",
+  "mapa_busca": "Rua Domingos Sávio Nogueira Saad, 3, Boa Viagem, Niterói, RJ",
+  "instagram": {
+    "usuario": "centroboaviagem",
+    "_comentario": "Cole aqui os links de posts que devem aparecer no site, ex.: https://www.instagram.com/p/XXXXXXXX/",
+    "posts": []
+  },
+  "facebook": "https://www.facebook.com/CentroBoaViagem",
+  "youtube": {
+    "canal": "https://www.youtube.com/channel/UC9YlXz4VQACKgsbVH1knC4w",
+    "_comentario": "Playlist de envios do canal (UU + id do canal sem o UC): mostra sempre os vídeos mais recentes",
+    "playlist_envios": "UU9YlXz4VQACKgsbVH1knC4w"
+  },
+  "_comentario_galerias": "Cada galeria é uma pasta do Google Drive compartilhada como 'Qualquer pessoa com o link'. O id é o trecho depois de /folders/ no link da pasta.",
+  "galerias": [],
+  "_comentario_formulario": "Link do Google Forms de contato terminado em /viewform?embedded=true. Vazio = o site mostra só e-mail e telefone.",
+  "formulario_contato": "",
+  "formulario_residencia": "https://docs.google.com/forms/d/e/1FAIpQLSe08mmt5jV-QvB7xZDKwZPm81_giMhwvbdc7CFvhJlk5VlkhA/viewform?embedded=true",
+  "menu": [
+    ["Início", ""],
+    ["Quem somos", "quem-somos/"],
+    ["Atividades", "atividades/"],
+    ["Formação", "formacao/"],
+    ["Residência", "residencia-universitaria/"],
+    ["Programas", "programas/"],
+    ["Fotos e vídeos", "fotos/"],
+    ["Contato", "contato/"]
+  ],
+  "_comentario_redirecionamentos": "Endereços do site WordPress antigo -> páginas novas, para não quebrar links e buscas.",
+  "redirecionamentos": {
+    "contact-2/": "contato/",
+    "sample-page-2-2-3-2/": "",
+    "atividades/preceptoria-de-estudos/": "atividades/#preceptoria",
+    "atividades/voluntariado/": "atividades/#voluntariado",
+    "atividades/excursoeselazer/": "atividades/#excursoes",
+    "excursoeselazer/": "atividades/#excursoes",
+    "atividades/mochileiros/": "atividades/#mochileiros",
+    "mochileiros/": "atividades/#mochileiros",
+    "em-construcao-interna/": "atividades/#esportes",
+    "em-construcao/": "",
+    "formacao/academica-e-profissional/": "formacao/#academica",
+    "formacao/humana-e-cultural/": "formacao/#humana",
+    "formacao/espiritual/": "formacao/#espiritual",
+    "mercado-financeiro/": "programas/#mercado-financeiro",
+    "business-case-competition/": "programas/#business-case",
+    "retiro-espiritual/": "programas/#retiro",
+    "convivio2020/": "programas/",
+    "horizontes2020/": "programas/",
+    "video/": "fotos/"
+  }
+}
