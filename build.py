@@ -221,6 +221,8 @@ def gerar():
     )
     (SAIDA / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {cfg['url']}/sitemap.xml\n", encoding="utf-8")
     (SAIDA / ".nojekyll").write_text("", encoding="utf-8")
+    # domínio próprio do GitHub Pages
+    (SAIDA / "CNAME").write_text(urllib.parse.urlparse(cfg["url"]).hostname + "\n", encoding="utf-8")
     print(f"ok: {len(urls_sitemap)} páginas, {len(cfg['redirecionamentos'])} redirecionamentos em {SAIDA}")
 
 
